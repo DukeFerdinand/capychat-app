@@ -1,0 +1,29 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Mutation {
+    createUser(userInfo: UserCreationInput!): User
+}
+
+type Query {
+    findUserByEmail(email: String!): User
+    hello: String
+}
+
+type User {
+    displayName: String!
+    email: String
+    id: ID!
+    username: String!
+}
+
+input UserCreationInput {
+    displayName: String
+    email: String!
+    password: String!
+    username: String!
+}
