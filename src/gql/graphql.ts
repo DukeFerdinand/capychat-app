@@ -16,12 +16,18 @@ export type Scalars = {
 
 export type Mutation = {
   __typename?: 'Mutation';
-  createUser?: Maybe<User>;
+  createUser: User;
+  signInUser: UserWithToken;
 };
 
 
 export type MutationCreateUserArgs = {
   userInfo: UserCreationInput;
+};
+
+
+export type MutationSignInUserArgs = {
+  userInfo: UserSignInInput;
 };
 
 export type Query = {
@@ -48,6 +54,17 @@ export type UserCreationInput = {
   email: Scalars['String'];
   password: Scalars['String'];
   username: Scalars['String'];
+};
+
+export type UserSignInInput = {
+  email: Scalars['String'];
+  password: Scalars['String'];
+};
+
+export type UserWithToken = {
+  __typename?: 'UserWithToken';
+  token: Scalars['String'];
+  user: User;
 };
 
 export type GetUserQueryVariables = Exact<{

@@ -9,7 +9,6 @@ import {
     StatusBar,
     StyleSheet,
     Text,
-    TextInput,
     TextInputChangeEventData,
     TouchableOpacity,
     TouchableWithoutFeedback,
@@ -24,6 +23,7 @@ import {
     MutationCreateUserArgs,
     UserCreationInput,
 } from "../gql/graphql";
+import { TextField } from "../components/TextField";
 
 const styles = StyleSheet.create({
     LogoContainer: {
@@ -199,29 +199,25 @@ export const Signup: React.FC = () => {
                             >
                                 Create an Account
                             </Text>
-                            <TextInput
-                                style={styles.Input}
+                            <TextField
                                 placeholder={"Username"}
                                 textContentType={"username"}
                                 onChange={(e) => handleChange("username", e)}
                             />
-                            <TextInput
-                                style={styles.Input}
+                            <TextField
                                 placeholder={"Email"}
                                 textContentType={"emailAddress"}
                                 onChange={(e) => handleChange("email", e)}
                             />
-                            <TextInput
+                            <TextField
                                 secureTextEntry
-                                style={styles.Input}
                                 placeholder={"Password"}
                                 textContentType={"newPassword"}
                                 autoComplete={"password-new"}
                                 onChange={(e) => handleChange("password", e)}
                             />
-                            <TextInput
+                            <TextField
                                 secureTextEntry
-                                style={styles.Input}
                                 placeholder={"Confirm Password"}
                                 textContentType={"newPassword"}
                                 autoComplete={"password-new"}

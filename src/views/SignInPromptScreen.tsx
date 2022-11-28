@@ -11,6 +11,7 @@ import {
 import { AppColors } from "../styles/colors";
 import { NavigationProp } from "@react-navigation/native";
 import { Logo } from "../components/Logo";
+import { AppViews } from "./Stack";
 
 const styles = StyleSheet.create({
     sectionContainer: {
@@ -32,48 +33,14 @@ const styles = StyleSheet.create({
     },
 });
 
-// const Section: React.FC<
-//     PropsWithChildren<{
-//         title: string;
-//     }>
-// > = ({ children, title }) => {
-//     const isDarkMode = useColorScheme() === "dark";
-//
-//     return (
-//         <View style={styles.sectionContainer}>
-//             <Text
-//                 style={[
-//                     styles.sectionTitle,
-//                     {
-//                         color: isDarkMode ? Colors.white : Colors.black,
-//                     },
-//                 ]}
-//             >
-//                 {title}
-//             </Text>
-//             <Text
-//                 style={[
-//                     styles.sectionDescription,
-//                     {
-//                         color: isDarkMode ? Colors.light : Colors.dark,
-//                     },
-//                 ]}
-//             >
-//                 {children}
-//             </Text>
-//         </View>
-//     );
-// };
-
-export const Login: React.FC<{
+export const SignInPromptScreen: React.FC<{
     navigation: NavigationProp<any>;
 }> = ({ navigation }) => {
-    // const nav = useNavigation();
-
     const backgroundStyle = {
         backgroundColor: AppColors.DarkBlue,
         flex: 1,
     };
+
     return (
         <SafeAreaView style={backgroundStyle}>
             <StatusBar
@@ -135,7 +102,9 @@ export const Login: React.FC<{
                                 borderRadius: 10,
                                 marginBottom: 15,
                             }}
-                            onPress={() => navigation.navigate("Signup")}
+                            onPress={() =>
+                                navigation.navigate(AppViews.SignupView)
+                            }
                         >
                             <Text
                                 style={{
@@ -157,6 +126,9 @@ export const Login: React.FC<{
                                 width: 260,
                                 borderRadius: 10,
                             }}
+                            onPress={() =>
+                                navigation.navigate(AppViews.SigninView)
+                            }
                         >
                             <Text
                                 style={{
