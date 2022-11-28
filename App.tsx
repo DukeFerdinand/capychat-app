@@ -8,6 +8,12 @@
  * @format
  */
 
+if (__DEV__) {
+    import("./src/logger/reactotron").then(() =>
+        console.log("Initialized reactotron!")
+    );
+}
+
 import React from "react";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import { NavigationContainer } from "@react-navigation/native";

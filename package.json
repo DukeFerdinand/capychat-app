@@ -8,17 +8,20 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "codegen": "graphql-codegen --config codegen.ts"
+    "codegen": "graphql-codegen --config codegen.ts",
+    "build:android": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/"
   },
   "dependencies": {
     "@apollo/client": "^3.7.1",
+    "@react-native-async-storage/async-storage": "^1.17.11",
     "@react-navigation/native": "^6.0.14",
     "@react-navigation/native-stack": "^6.9.2",
     "graphql": "^16.6.0",
     "react": "18.1.0",
     "react-native": "0.70.6",
     "react-native-safe-area-context": "^4.4.1",
-    "react-native-screens": "^3.18.2"
+    "react-native-screens": "^3.18.2",
+    "reactotron-react-native": "^5.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

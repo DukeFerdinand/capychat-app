@@ -1,24 +1,15 @@
-import React, { PropsWithChildren } from "react";
+import React from "react";
 import {
-    Button,
-    KeyboardAvoidingView,
     SafeAreaView,
     ScrollView,
     StatusBar,
     StyleSheet,
     Text,
-    TextInput,
     TouchableOpacity,
-    useColorScheme,
     View,
 } from "react-native";
-import { useQuery } from "@apollo/client";
-import { getUserQuery } from "../queries/getUserQuery";
-import { GetUserQuery, GetUserQueryVariables } from "../gql/graphql";
 import { AppColors } from "../styles/colors";
-import { Link, NavigationProp, useNavigation } from "@react-navigation/native";
-import { Colors } from "react-native/Libraries/NewAppScreen";
-import App from "../../App";
+import { NavigationProp } from "@react-navigation/native";
 import { Logo } from "../components/Logo";
 
 const styles = StyleSheet.create({
@@ -41,44 +32,43 @@ const styles = StyleSheet.create({
     },
 });
 
-const Section: React.FC<
-    PropsWithChildren<{
-        title: string;
-    }>
-> = ({ children, title }) => {
-    const isDarkMode = useColorScheme() === "dark";
-
-    return (
-        <View style={styles.sectionContainer}>
-            <Text
-                style={[
-                    styles.sectionTitle,
-                    {
-                        color: isDarkMode ? Colors.white : Colors.black,
-                    },
-                ]}
-            >
-                {title}
-            </Text>
-            <Text
-                style={[
-                    styles.sectionDescription,
-                    {
-                        color: isDarkMode ? Colors.light : Colors.dark,
-                    },
-                ]}
-            >
-                {children}
-            </Text>
-        </View>
-    );
-};
+// const Section: React.FC<
+//     PropsWithChildren<{
+//         title: string;
+//     }>
+// > = ({ children, title }) => {
+//     const isDarkMode = useColorScheme() === "dark";
+//
+//     return (
+//         <View style={styles.sectionContainer}>
+//             <Text
+//                 style={[
+//                     styles.sectionTitle,
+//                     {
+//                         color: isDarkMode ? Colors.white : Colors.black,
+//                     },
+//                 ]}
+//             >
+//                 {title}
+//             </Text>
+//             <Text
+//                 style={[
+//                     styles.sectionDescription,
+//                     {
+//                         color: isDarkMode ? Colors.light : Colors.dark,
+//                     },
+//                 ]}
+//             >
+//                 {children}
+//             </Text>
+//         </View>
+//     );
+// };
 
 export const Login: React.FC<{
     navigation: NavigationProp<any>;
 }> = ({ navigation }) => {
-    const isDarkMode = useColorScheme() === "dark";
-    const nav = useNavigation();
+    // const nav = useNavigation();
 
     const backgroundStyle = {
         backgroundColor: AppColors.DarkBlue,
@@ -130,7 +120,7 @@ export const Login: React.FC<{
                     <View
                         style={
                             {
-                                // paddingTop: 15,
+                                // padSdingTop: 15,
                             }
                         }
                     >
